@@ -37,8 +37,8 @@
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#education">Education</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#experience">Experience</a></li>
+        <li><a href="#work">Projects</a></li>
+        <li><a href="#experience">Volunteer Experience</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -54,7 +54,7 @@
 
     <div class="content">
       <h3>Hi There,<br /> I'm Gaurav <span>Kulkarni</span></h3>
-      <p>i am a <span class="typing-text"></span></p>
+      <p>I am a <span class="typing-text"></span></p>
       <a href="#about" class="btn"><span>About Me</span>
         <i class="fas fa-arrow-circle-down"></i>
       </a>
@@ -84,22 +84,19 @@
     <div class="row">
 
       <div class="image">
-        <img draggable="false" class="tilt" src="./assests/images/profile.jpg" alt="Gaurav Image">
+        <img draggable="false" class="tilt" src="./assests/images/Photo.png" alt="Gaurav Image">
       </div>
       <div class="content">
         <h3>I'm Gaurav</h3>
-        <span class="tag">MBA Pursuer | Web Developer | Cloud Enthusiast </span>
-        <p>Fresher Software Engineer & Developer with an emphasis on Angular and Python frameworks | Excellent ability
-          to align teams and drive collaboration and cohesion to complete projects in a timely and cost-effective manner. |
-          Looking for new challenges and opportunities to put into use my experience coupled with strong analytical and
-          communication skills.
+        <span class="tag">MBA Pursuer | Web Developer | Technology Enthusiast </span>
+        <p>As a proactive person with a solid foundation in computer engineering and proficient programming skills, I bring a uniqueblend of technical knowledge and business acumen to the table. My coursework and projects have equipped me withstrong analytical abilities and a strategic mindset. I am driven by a passion for leveraging technology to optimize processesand deliver innovative solutions, making me a valuable asset to any team
 
 
         </p>
 
         <div class="box-container">
           <div class="box">
-            <p><span> Age: </span> 22</p>
+            <p><span> Age:  </span> <span id='age'></span></p>
             <p><span> College : </span>Vidyalankar Institute of Technology, Wadala</p>
           </div>
           <div class="box">
@@ -132,63 +129,49 @@
             <div class="info">
               <i class="fab fa-html5">
                 <span>HTML</span></i>
-              <span>90%</span>
             </div>
-            <div class="line html"></div>
           </div>
 
           <div class="bar">
             <div class="info">
               <i class="fab fa-css3-alt">
                 <span>CSS</span></i>
-              <span>82%</span>
             </div>
-            <div class="line css"></div>
           </div>
 
           <div class="bar">
             <div class="info">
               <i class="fab fa-js-square">
                 <span>Javascript</span></i>
-              <span>80%</span>
             </div>
-            <div class="line javascript"></div>
           </div>
 
           <div class="bar">
             <div class="info">
               <i class="fas fa-code">
                 <span>jQuery</span></i>
-              <span>75%</span>
             </div>
-            <div class="line jquery"></div>
           </div>
 
           <div class="bar">
             <div class="info">
               <i class="fab fa-google cloud">
                 <span>Google Cloud Platform</span></i>
-              <span>78%</span>
             </div>
-            <div class="line php"></div>
           </div>
 
           <div class="bar">
             <div class="info">
               <i class="fab fa-react">
                 <span>ReactJS</span></i>
-              <span>55%</span>
             </div>
-            <div class="line reactjs"></div>
           </div>
 
           <div class="bar">
             <div class="info">
               <i class="fab fa-angular">
                 <span>AngularJS</span></i>
-              <span>80%</span>
             </div>
-            <div class="line android"></div>
           </div>
         </div>
 
@@ -198,54 +181,43 @@
             <div class="info">
               <i class="fab fa-python">
                 <span>Python</span></i>
-              <span>90%</span>
             </div>
-            <div class="line python"></div>
           </div>
 
           <div class="bar">
             <div class="info">
               <i class="fab fa-python">
                 <span>Django</span></i>
-              <span>80%</span>
             </div>
-            <div class="line android"></div>
           </div>
 
           <div class="bar">
             <div class="info">
               <i class="fab fa-node-js">
                 <span>NodeJS</span></i>
-              <span>55%</span>
             </div>
-            <div class="line nodejs"></div>
           </div>
 
           <div class="bar">
             <div class="info">
               <i class="fas fa-code-branch">
                 <span>Git & GitHub | VCS</span></i>
-              <span>88%</span>
             </div>
-            <div class="line vcs"></div>
           </div>
 
           <div class="bar">
             <div class="info">
-              <i class="fab fa-">
-                <span>C++</span></i>
-              <span>70%</span>
+              <!-- <i class="fab fa-"> -->
+                <i class="fas fa-plus"><span> C++</span></i>
+                <!-- </i> -->
             </div>
-            <div class="line cms"></div>
           </div>
 
           <div class="bar">
             <div class="info">
               <i class="fab fa-python">
                 <span>Jupyter Notebook</span></i>
-              <span>90%</span>
             </div>
-            <div class="line firebase"></div>
           </div>
 
         </div>
@@ -659,6 +631,12 @@
   <!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
 
   <script src="./assests/js/script.js"></script>
+
+  <script>
+    document.getElementById("age").textContent = 
+      new Date().getFullYear() - new Date("2001-07-06").getFullYear() - 
+      (new Date() < new Date(new Date().getFullYear(), 6, 6) ? 1 : 0);
+  </script>
 
 </body>
 

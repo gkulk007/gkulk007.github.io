@@ -8,7 +8,7 @@
   text-decoration: none;
   outline: none;
   border: none;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   transition: all .2s linear;
 }
 
@@ -449,6 +449,7 @@ header .navbar ul li a:hover {
   margin-top: 1.5rem;
   font-family: 'Nunito';
   font-weight: 600;
+  text-align: justify;
 }
 
 .about .row .content .box-container {
