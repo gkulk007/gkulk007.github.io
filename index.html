@@ -18,7 +18,7 @@
 
 </head>
 
-<body oncontextmenu="return false">
+<body >oncontextmenu="return false"
 
   <!-- pre loader -->
   <div class="loader-container">
@@ -88,7 +88,7 @@
       </div>
       <div class="content">
         <h3>I'm Gaurav</h3>
-        <span class="tag">MBA Pursuer | Web Developer | Technology Enthusiast </span>
+        <span class="tag"> AV Specialist | Technology Enthusiast </span>
         <p>As a proactive person with a solid foundation in computer engineering and proficient programming skills, I bring a uniqueblend of technical knowledge and business acumen to the table. My coursework and projects have equipped me withstrong analytical abilities and a strategic mindset. I am driven by a passion for leveraging technology to optimize processesand deliver innovative solutions, making me a valuable asset to any team
 
 
@@ -96,8 +96,8 @@
 
         <div class="box-container">
           <div class="box">
-            <p><span> Age:  </span> <span id='age'></span></p>
-            <p><span> College : </span>Vidyalankar Institute of Technology, Wadala</p>
+            <p><span> Age :  </span> <span id='age'></span></p>
+            <p><span> Company : </span>Godrej & Boyce Mfg. Co. Ltd.</p>
           </div>
           <div class="box">
             <p><span> Email : </span> gkulk007@gmail.com</p>
@@ -721,7 +721,26 @@
       new Date().getFullYear() - new Date("2001-07-06").getFullYear() - 
       (new Date() < new Date(new Date().getFullYear(), 6, 6) ? 1 : 0);
   </script>
+  <div id="certificates"></div>
 
+<script>
+const baseURL = "https://api.github.com/repos/gkulk007/gkulk007.github.io/certificates";
+
+fetch(baseURL)
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById("certificates");
+
+    data.forEach(item => {
+      if (item.type === "dir") {
+        const title = document.createElement("h2");
+        title.innerText = item.name;
+        container.appendChild(title);
+      }
+    });
+  })
+  .catch(err => console.error("Error:", err));
+</script>
 </body>
 
 </html>
