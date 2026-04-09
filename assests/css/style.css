@@ -1516,3 +1516,127 @@ form .button-area {
 }
 
 /* scroll top ends */
+
+
+/* Certificates CSS */
+
+.certup-container {
+  max-width: auto;
+  margin: auto;
+  /* display: flex;
+  align-items: normal;
+  justify-content: left; */
+  padding: 20px;
+  background-color: rgb(229, 236, 251)
+}
+
+.certup-category {
+  margin-bottom: 40px;
+}
+
+.certup-category h2 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  border-left: 4px solid #007bff;
+  padding-left: 10px;
+}
+
+.certup-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 220px));
+  justify-content: start;
+  gap: 16px;
+}
+
+.certup-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.certup-card:hover {
+  transform: translateY(-5px);
+}
+
+.certup-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.certup-card-body {
+  padding: 10px;
+}
+
+.certup-card-title {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.certup-card-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.certup-card-actions a {
+  font-size: 12px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+/* 📱 Mobile */
+@media (max-width: 500px) {
+  .certup-card img {
+    height: 130px;
+  }
+
+  .certup-category h2 {
+    font-size: 18px;
+  }
+  
+}
+@media (max-width: 500px) {
+  .certup-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
+.certup-modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding: 20px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.certup-modal-img {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.certup-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 35px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .certup-modal-img {
+    max-width: 100%;
+    max-height: 80%;
+  }
+}

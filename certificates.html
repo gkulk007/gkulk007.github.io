@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Gaurav Kulkarni, portfolio Gaurav Kulkarni, Web Developer, portfolio website, Gaurav Kulkarni website, Gaurav Kulkarni VIT, Gaurav Kulkarni mescoe, Gaurav Kulkarni Parli, Founder Directing Visions" />
+  <meta name="description" content="Welcome to Gaurav's Portfolio. Passionate Web Developer. Freelancer, Cloud Ethusiast." />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./assests/css/style.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+  <!-- Favicon -->
+  <link id='favicon' rel="shortcut icon" href="./assests/images/favicon.png" type="image/x-png">
+  <title>Portfolio | Gaurav Kulkarni </title>
+
+</head>
+
+<body >
+
+
+
+<div id="certificates"></div>
+<div id="certup-modal" class="certup-modal">
+  <span class="certup-close">&times;</span>
+  <img class="certup-modal-img" id="certup-modal-img">
+</div>
+
+ <link rel="stylesheet" href="./assests/css/style.css">
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const container = document.getElementById("certificates");
+  container.classList.add("certup-container");
+
+  const JSON_PATH = "/certificates/certificates.json";
+
+  fetch(JSON_PATH)
+    .then(response => response.json())
+    .then(data => {
+
+      Object.keys(data).forEach(category => {
+
+        // Section
+        const section = document.createElement("div");
+        section.className = "certup-category";
+
+        const title = document.createElement("h2");
+        title.innerText = formatTitle(category);
+
+        section.appendChild(title);
+
+        // Grid
+        const grid = document.createElement("div");
+        grid.className = "certup-grid";
+
+        data[category].forEach(fileName => {
+
+          const card = createCard(category, fileName);
+          grid.appendChild(card);
+
+        });
+
+        section.appendChild(grid);
+        container.appendChild(section);
+
+      });
+
+    })
+    .catch(error => {
+      console.error("Error loading certificates:", error);
+      container.innerHTML = "<p>⚠️ Failed to load certificates.</p>";
+    });
+
+
+  function createCard(category, fileName) {
+
+    const card = document.createElement("div");
+    card.className = "certup-card";
+
+    // Image
+    const img = document.createElement("img");
+    img.src = `/certificates/${category}/${fileName}.webp`;
+    img.alt = fileName;
+    img.loading = "lazy";
+
+    // Body
+    const body = document.createElement("div");
+    body.className = "certup-card-body";
+
+    // Title
+    const title = document.createElement("div");
+    title.className = "certup-card-title";
+    title.innerText = formatTitle(fileName);
+
+    // Actions
+    const actions = document.createElement("div");
+    actions.className = "certup-card-actions";
+
+    // View (Modal)
+const viewBtn = document.createElement("a");
+viewBtn.href = "javascript:void(0)";
+viewBtn.innerText = "View";
+
+viewBtn.addEventListener("click", () => {
+  openModal(`/certificates/${category}/${fileName}.webp`);
+});
+
+    const downloadBtn = document.createElement("a");
+    downloadBtn.href = `/certificates/${category}/${fileName}.pdf`;
+    downloadBtn.setAttribute("download", fileName + ".pdf");
+    downloadBtn.innerText = "Download";
+
+    actions.appendChild(viewBtn);
+    actions.appendChild(downloadBtn);
+
+    body.appendChild(title);
+    body.appendChild(actions);
+
+    card.appendChild(img);
+    card.appendChild(body);
+
+    return card;
+  }
+
+
+  function formatTitle(text) {
+    return text
+      .replace(/[-_]/g, " ")
+      .replace(/\b\w/g, char => char.toUpperCase());
+  }
+
+});
+
+function openModal(src) {
+  const modal = document.getElementById("certup-modal");
+  const modalImg = document.getElementById("certup-modal-img");
+
+  modal.style.display = "block";
+  modalImg.src = src;
+}
+
+function closeModal() {
+  document.getElementById("certup-modal").style.display = "none";
+}
+
+// Close button
+document.querySelector(".certup-close").onclick = closeModal;
+
+// Close on background click
+window.onclick = function(event) {
+  const modal = document.getElementById("certup-modal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+};
+</script>
+
+</body>
