@@ -724,22 +724,111 @@
   <div id="certificates"></div>
 
 <script>
-const baseURL = "https://api.github.com/repos/gkulk007/gkulk007.github.io/certificates";
+const baseURL = "https://api.github.com/repos/gkulk007/gkulk007.github.io/contents/certificates";
 
 fetch(baseURL)
   .then(res => res.json())
-  .then(data => {
+  .then(folders => {
     const container = document.getElementById("certificates");
 
-    data.forEach(item => {
-      if (item.type === "dir") {
+    folders.forEach(folder => {
+      if (folder.type === "dir") {
+
+        const section = document.createElement("div");
+
         const title = document.createElement("h2");
-        title.innerText = item.name;
-        container.appendChild(title);
+        title.innerText = folder.name.toUpperCase();
+        section.appendChild(title);
+
+        const grid = document.createElement("div");
+        grid.style.display = "grid";
+        grid.style.gridTemplateColumns = "repeat(auto-fill, minmax(220px,1fr))";
+        grid.style.gap = "15px";
+
+        fetch(folder.url)
+          .then(res => res.json())
+          .then(files => {
+
+            // Map files for easy lookup
+            const fileMap = {};
+            files.forEach(f => fileMap[f.name] = f);
+
+            files.forEach(file => {
+              if (file.name.endsWith(".pdf")) {
+
+                const baseName = file.name.replace(".pdf", "");
+                const webpName = baseName + ".webp";
+
+                const webpFile = fileMap[webpName];
+
+                // Card
+                const card = document.createElement("div");
+                card.style.border = "1px solid #eee";
+                card.style.borderRadius = "12px";
+                card.style.overflow = "hidden";
+                card.style.boxShadow = "0 3px 8px rgba(0,0,0,0.08)";
+                card.style.transition = "0.3s";
+                card.style.background = "#fff";
+
+                card.onmouseover = () => card.style.transform = "scale(1.03)";
+                card.onmouseout = () => card.style.transform = "scale(1)";
+
+                // Image preview
+                const img = document.createElement("img");
+
+                if (webpFile) {
+                  img.src = webpFile.download_url;
+                } else {
+                  img.src = "https://via.placeholder.com/300x200?text=No+Preview";
+                }
+
+                img.style.width = "100%";
+                img.style.height = "150px";
+                img.style.objectFit = "cover";
+                img.loading = "lazy";
+
+                // Title
+                const name = document.createElement("div");
+                name.innerText = baseName.replace(/[-_]/g, " ");
+                name.style.padding = "10px";
+                name.style.fontSize = "14px";
+                name.style.fontWeight = "500";
+
+                // Actions
+                const actions = document.createElement("div");
+                actions.style.display = "flex";
+                actions.style.justifyContent = "space-between";
+                actions.style.padding = "10px";
+
+                const viewBtn = document.createElement("a");
+                viewBtn.href = file.download_url;
+                viewBtn.target = "_blank";
+                viewBtn.innerText = "View";
+
+                const downloadBtn = document.createElement("a");
+                downloadBtn.href = file.download_url;
+                downloadBtn.setAttribute("download", file.name);
+                downloadBtn.innerText = "Download";
+
+                actions.appendChild(viewBtn);
+                actions.appendChild(downloadBtn);
+
+                // Assemble
+                card.appendChild(img);
+                card.appendChild(name);
+                card.appendChild(actions);
+
+                grid.appendChild(card);
+              }
+            });
+          });
+
+        section.appendChild(grid);
+        container.appendChild(section);
       }
     });
   })
-  .catch(err => console.error("Error:", err));
+  .catch(err => console.error(err));
 </script>
 </body>
 
