@@ -532,7 +532,8 @@ header .navbar ul li a:hover {
 /* about section ends */
 /* skills section starts */
 .skills {
-  background: linear-gradient(to bottom, #57059e, #4a00e0);
+  /* background: linear-gradient(to bottom, #57059e, #4a00e0); */
+      background: linear-gradient(to bottom, #5b059e, #00e0a0);
 }
 
 .skills h2 {
@@ -976,6 +977,9 @@ header .navbar ul li a:hover {
 
 /* work section ends */
 /* experience section starts */
+.experience {
+  background: #e5ecfb;
+}
 .experience .timeline {
   position: relative;
   max-width: 1200px;
@@ -1061,7 +1065,19 @@ header .navbar ul li a:hover {
 }
 
 .experience .content {
-  background-color: #f68c09;
+  /* background-color: #f68c09; */
+  /* background-color: #ff5d55; */
+  background-color: #ffd900;
+  color: black ;
+  position: relative;
+  border-radius: 6px;
+}
+
+ .experience .current {
+  /* background-color: #f68c09; */
+  background-color: #ff5d55;
+  /* background-color: #ffd900; */
+  color: black ;
   position: relative;
   border-radius: 6px;
 }
@@ -1543,8 +1559,8 @@ form .button-area {
 
 .certup-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 220px));
-  justify-content: start;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 320px));
+  justify-content: space-evenly;
   gap: 16px;
 }
 
@@ -1640,3 +1656,41 @@ form .button-area {
     max-height: 80%;
   }
 }
+.returnbtn-container{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.returnbtn-container .btn-homereturn {
+  margin-top: 1rem;
+
+  line-height: 0;
+  padding: 1.6rem 3rem;
+  border-radius: 4em;
+  transition: 0.5s;
+  color: #fff;
+  background: #ff7b00;
+  box-shadow: 0px 5px 18px rgba(145, 136, 12, 0.6);
+  font-family: 'Nunito', sans-serif;
+}
+
+.returnbtn-container .btn-homereturn span {
+  font-weight: 700;
+  font-size: 1.7rem;
+  letter-spacing: 0.1rem;
+}
+
+.returnbtn-container .btn-homereturn i {
+  margin-left: 0.3rem;
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+
+.returnbtn-container .btn-homereturn:hover {
+  background: #1a047e;
+}
+
+.returnbtn-container .btn-homereturn:hover i {
+  transform: translateX(5px);
+} 

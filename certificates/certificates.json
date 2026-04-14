@@ -1,42 +1,42 @@
 {
   "Barco": [
-    "Barco ClickShare Hub Product Sales",
+    "Barco ClickShare Hub Product Sales Specialist",
     "Refresh of Clickshare Products and CS HUB"
   ],
   "Biamp": [
-    "Tesira_AV_Processing_and_Distribution___Applications_Lvl_01-Tesira_AV_Processing_and_Distribution___Applications_Lvl_01_Certificate_48774"
+    "Tesira_AV_Processing_and_Distribution___Applications_Lvl_01"
   ],
   "Extron": [
-    "1128854-1999280",
-    "1128854-1999281",
-    "1128854-1999282",
-    "1128854-1999283",
-    "1128854-1999284",
-    "1128854-1999285",
-    "1128854-1999286",
-    "1128854-1999287",
-    "1128854-1999288",
-    "1128854-1999289",
-    "1128854-2059681",
-    "1128854-2059682",
-    "Extron AV Associate"
+    "Audio Principles",
+    "Connecting an Enterprise with NAV Systems",
+    "Connectivity Principles",
+    "Control Principles",
+    "Extron AV Associate",
+    "Fiber Optic Principles",
+    "Networking Principles",
+    "Signal Processing and Distribution Principles",
+    "Streaming Principles",
+    "System Configuration of NAV",
+    "USB Principles",
+    "Video Principles",
+    "Wireless Principles"
   ],
   "Harman": [
     "Audio_Essentials",
-    "Cabling_Essentials (1)",
+    "Cabling_Essentials",
     "Control_Essentials",
     "Networking_Essentials",
     "PC_Essentials",
     "Video Essentials"
   ],
   "Kramer": [
-    "166_31_39150_1754047153_Kramer Collaboration Devices - BYOD AVIXA",
-    "178_29_39150_1753940996_AV cables introduction AVIXA",
-    "187_33_39150_1754044094_Kramer Desktop Connectivity - TBUS AVIXA",
-    "188_32_39150_1754392355_Kramer Collaboration Devices - MTR AVIXA",
-    "45_10_39150_1753959115_Kramer AV over IP Sales Associate",
-    "51_13_39150_1754564920_Kramer Audio Specialist",
-    "67_19_39150_1754029954_VIA Sales Associate"
+    "AV cables introduction AVIXA",
+    "Kramer AV over IP Sales Associate",
+    "Kramer Audio Specialist",
+    "Kramer Collaboration Devices - BYOD AVIXA",
+    "Kramer Collaboration Devices - MTR AVIXA",
+    "Kramer Desktop Connectivity - TBUS AVIXA",
+    "VIA Sales Associate"
   ],
   "Lighware": [
     "1 Gbps AV-over-IP Gemini GVN - Level 1",
@@ -56,19 +56,18 @@
     "Poly Sales Specialist"
   ],
   "QSYS": [
-    "Q_SYS_Architect_In_Classroom_Training-Q_SYS_Architect_Certificate_799310",
-    "Q_SYS_Certified_Sales_Professional_Training-Q_SYS_Certified_Sales_Professional_Training_Certificate_820603",
-    "Q_SYS_Level_Zero_Training-Q_SYS_Level_Zero_Certificate_829997"
+    "Q_SYS_Architect_Certificate_799310",
+    "Q_SYS_Certified_Sales_Professional_Training_Certificate_820603",
+    "Q_SYS_Level_Zero_Certificate_829997"
   ],
   "Sennheiser": [
-    "118_49_19919_1754627539_Certificate SpeechLine MCR",
-    "119_58_19919_1755852777_Certificate EW-DX for BizCom",
-    "128_51_19919_1755841244_Certificate MobileConnect CTS",
-    "84_54_19919_1755938514_Certificate TeamConnect Bars CTS"
+    "EW-DX for BizCom",
+    "MobileConnect CTS",
+    "TeamConnect Bars CTS"
   ],
   "Shure": [
-    "certification-Networking-Basics-for-Audio-Professionals-gkulk@godrej.com",
-    "certification-Networking-for-AV-Professionals---Part-1-The-Basics-gkulk@godrej.com",
-    "certification-Wireless-Basics-gkulk@godrej.com"
+    "Networking-Basics-for-Audio-Professionals",
+    "Networking-for-AV-Professionals-Part-1-The-Basics",
+    "Wireless-Basics"
   ]
 }
